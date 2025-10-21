@@ -2,11 +2,11 @@ services:
   - type: web
     name: gemini-pdf-processor
     env: python
-    plan: free # Используем бесплатный тариф
+    plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
+    startCommand: "gunicorn --timeout 700 app:app"
     envVars:
       - key: GEMINI_API_KEY
-        sync: false # Ключ будет добавлен вручную в панели Render
+        sync: false
       - key: PYTHON_VERSION
         value: 3.11.4
