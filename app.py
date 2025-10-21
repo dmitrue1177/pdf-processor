@@ -149,8 +149,8 @@ def index():
                     image_parts.append(img)
 
             # --- 3. Формирование промпта для Gemini ---
-            # Используем Gemini 1.5 Flash как более быстрый и экономичный вариант
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            # Используем Gemini 2.5 Pro как лучший вариант
+            model = genai.GenerativeModel('gemini-2.5-pro')
 
             # Тот самый стартовый промпт
             initial_prompt = """
